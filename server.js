@@ -5,6 +5,8 @@
 // but feel free to use whatever libraries or frameworks you'd like through `package.json`.
 const express = require("express");
 const app = express();
+const bodyParser = require('body-parser');
+
 
 // our default array of dreams
 const dreams = [
@@ -16,6 +18,9 @@ const dreams = [
 // make all the files in 'public' available
 // https://expressjs.com/en/starter/static-files.html
 app.use(express.static("public"));
+
+//now app will we able to understand json request
+app.use(bodyParser.json())
 
 // https://expressjs.com/en/starter/basic-routing.html
 app.get("/", (request, response) => {
