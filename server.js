@@ -6,7 +6,7 @@
 const express = require("express");
 const app = express();
 const bodyParser = require('body-parser');
-
+const routes = require('./routes/api');
 
 // our default array of dreams
 const dreams = [
@@ -21,6 +21,9 @@ app.use(express.static("public"));
 
 //now app will we able to understand json request
 app.use(bodyParser.json())
+
+//tell app to use our new routes
+app.use(routes);
 
 // https://expressjs.com/en/starter/basic-routing.html
 app.get("/", (request, response) => {
