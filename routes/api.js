@@ -1,3 +1,4 @@
+//we will create routes in a saparate file. for good managment.
 const express = require('express');
 const router = express.Router();
 
@@ -8,5 +9,5 @@ router.post('ninjas',function(req,res){
 
 router.get('ninjas',function(req,res){
   console.log(req.body);
-  res.send({type:'POST'});
+  res.send({type:'POST'});  
 });

@@ -10,7 +10,7 @@ const bodyParser = require('body-parser');
 
 // our default array of dreams
 const dreams = [
-  "Find and count some sheep",
+  "GET end point: https://muneeb.glitch.me/ok",
   "Climb a really tall mountain",
   "Wash the dishes"
 ];
@@ -36,11 +36,11 @@ app.get("/dreams", (request, response) => {
 //test req
 app.get('/ok',function(req,res){
   console.log('GET Request');
-  res.end();
+  res.send({name:'Muneeb'});
 });
 
 //test req 2
-app.get('/ok',function(req,res){
+app.get('/ok2',function(req,res){
   console.log('GET Request');
   res.end();
 });
