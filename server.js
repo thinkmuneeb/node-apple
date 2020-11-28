@@ -22,13 +22,14 @@ app.use(express.static("public"));
 //now app will we able to understand json request
 app.use(bodyParser.json())
 
-//tell app to use our new routes
-app.use(routes);
 
 // https://expressjs.com/en/starter/basic-routing.html
 app.get("/", (request, response) => {
   response.sendFile(__dirname + "/views/index.html");
 });
+
+//tell app to use our new routes
+//app.use(routes);
 
 // send the default array of dreams to the webpage
 app.get("/dreams", (request, response) => {
