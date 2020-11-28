@@ -37,17 +37,6 @@ app.get("/dreams", (request, response) => {
   response.json(dreams);
 });
 
-//test req
-app.get('/ok',function(req,res){
-  console.log('GET Request');
-  res.send({name:'Muneeb'});
-});
-
-//test req 2
-app.get('/ok2',function(req,res){
-  console.log('GET Request');
-  res.end();
-});
 
 // listen for requests :)
 const listener = app.listen(process.env.PORT, () => {
