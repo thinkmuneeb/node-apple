@@ -22,21 +22,19 @@ app.use(express.static("public"));
 //now app will we able to understand json request
 app.use(bodyParser.json())
 
+//tell app to use our new routes
+app.use('/api',routes);
 
 // https://expressjs.com/en/starter/basic-routing.html
 app.get("/", (request, response) => {
   response.sendFile(__dirname + "/views/index.html");
 });
 
-//tell app to use our new routes
-//app.use(routes);
-
 // send the default array of dreams to the webpage
 app.get("/dreams", (request, response) => {
   // express helps us take JS objects and send them as JSON
   response.json(dreams);
 });
-
 
 // listen for requests :)
 const listener = app.listen(process.env.PORT, () => {

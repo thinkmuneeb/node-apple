@@ -28,4 +28,4 @@ router.delete('/ninjas:id',function(req,res){
   res.send({type:'DELETE'});  
 });
 
-module.export = router; //module is built in, folderize concept
+module.exports = router; //module is built in, folderize concept
